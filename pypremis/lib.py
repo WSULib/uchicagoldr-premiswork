@@ -343,12 +343,10 @@ class PremisRecord(object):
             root.append(entry.toXML())
         return tree
 
-    def to_xml(self, encoding='UTF-8', method='xml',
-               short_empty_elements=True):
+    def to_xml(self, encoding='UTF-8', method='xml'):
         tree = self.to_tree()
         return ET.tostring(tree.getroot(), encoding=encoding,
-                           method=method,
-                           short_empty_elements=short_empty_elements)
+                           method=method)
 
     def write_to_file(self, targetpath, xml_declaration=True,
                       encoding="UTF-8", method='xml'):
