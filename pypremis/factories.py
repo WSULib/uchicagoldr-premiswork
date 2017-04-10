@@ -1159,7 +1159,9 @@ class XMLNodeFactory(object):
         return termOfRestriction
 
 
-class LinkingXIdentifierFactory(metaclass=ABCMeta):
+class LinkingXIdentifierFactory():
+
+    __metaclass__ = ABCMeta
 
     _input_node = None
     _output_node_type = None
