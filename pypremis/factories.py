@@ -3,6 +3,10 @@ from abc import ABCMeta, abstractmethod
 
 from pypremis.nodes import *
 
+# backwards compatibility for py2
+from future.utils import with_metaclass
+
+
 """
 ### Factory classes for building pypremis nodes from serializations ###
 
@@ -1159,9 +1163,7 @@ class XMLNodeFactory(object):
         return termOfRestriction
 
 
-class LinkingXIdentifierFactory():
-
-    __metaclass__ = ABCMeta
+class LinkingXIdentifierFactory(with_metaclass(ABCMeta)):
 
     _input_node = None
     _output_node_type = None
