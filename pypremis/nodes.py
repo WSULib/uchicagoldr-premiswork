@@ -641,8 +641,8 @@ class Object(PremisNode):
         self._add_to_field('significantProperties', significantProperties)
 
     def set_objectCharacteristics(self, objectCharacteristics):
-        if self.get_objectCategory() == 'intellectual entity' or self.get_objectCategory() == 'representation':
-            self._notApplicable()
+        # if self.get_objectCategory() == 'intellectual entity' or self.get_objectCategory() == 'representation':
+        #     self._notApplicable()
         objectCharacteristics = self._listify(objectCharacteristics)
         for x in objectCharacteristics:
             self._type_check(x, ObjectCharacteristics)
